@@ -21,25 +21,27 @@ def main():
 
     # goto url
     url = "https://mybanner.msstate.edu/prod/wwskmeal.P_DispMealPlan"
+    url2 = "https://mybanner.msstate.edu/prod/twbkwbis.P_ValLogin"
     driver.get(url)
 
-    # clear the command prompt
-    clear = lambda: os.system('cls')
-    clear()
+    while(driver.current_url == url or driver.current_url == url2):
+        # clear the command prompt
+        clear = lambda: os.system('cls')
+        clear()
 
-    # login
-    sid = input("username: ")
-    driver.find_element_by_name('sid').send_keys(sid)
-    pin = getpass.getpass("password: ")
-    driver.find_element_by_name('PIN').send_keys(pin)
-    driver.find_element_by_name('PIN').submit()
+        # login
+        sid = input("username: ")
+        driver.find_element_by_name('sid').send_keys(sid)
+        pin = getpass.getpass("password: ")
+        driver.find_element_by_name('PIN').send_keys(pin)
+        driver.find_element_by_name('PIN').submit()
 
-    # make sure passed login
-    try:
-        driver.find_element_by_name('KEYWRD_IN')
-    except:
-        print("Login Failed.")
-        sys.exit(1)
+        # make sure passed login
+        try:
+            driver.find_element_by_name('KEYWRD_IN')
+        except:
+            print("Login Failed. Please Try Again.")
+            sleep(2)
 
 
     # search 'meal plan' in search box
