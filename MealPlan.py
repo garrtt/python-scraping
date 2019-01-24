@@ -19,7 +19,7 @@ def main():
         driver = webdriver.Chrome()
         driver.set_window_position(1300,20)
 
-    # goto url
+    # login urls
     url = "https://mybanner.msstate.edu/prod/wwskmeal.P_DispMealPlan"
     url2 = "https://mybanner.msstate.edu/prod/twbkwbis.P_ValLogin"
     driver.get(url)
