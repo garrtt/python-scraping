@@ -10,7 +10,7 @@ import sys
 
 
 def main():
-    # show/hide Chrome browser
+    # show/hide Chrome browser # don't commit
     if (True):
         chrome_options = Options()
         chrome_options.add_argument("--headless")
